@@ -1,24 +1,23 @@
 import React, { useState } from 'react';
 import './App.css';
-import { Data } from './Data';
+import Card from './Card';
 import Form from './Form';
 
 function App() {
 
-  const [teamData, setTeamData] = useState(Data);
+  const [people, setPeople] = useState([
+    {name: "zach", email: "zach@gmail.com", role: "developer"},
+    {name: "dan", email: "dan@gmail.com", role: "tl"}
+  ]);
   return (
     <div className="App">
-     <Form></Form>
-      {teamData.map((vals, index) => (
-        <div key={index}>
-        <h1>{vals.name}</h1>
-        <h1>{vals.email}</h1>
-        <h1>{vals.role}</h1>
-      </div>
-      )
-        
-      )}
+    
+    <Form setPeople={setPeople}/>
+     
+    {people.map(person => <Card person={person}/>)}
+    
     </div>
+    
   );
 }
 

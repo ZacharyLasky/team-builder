@@ -1,20 +1,6 @@
 import React, { useState } from 'react';
 
 export default function Form() {
-  const [team, setTeam] = useState([
-    
-    {
-    name: "zach",
-    email: "zach@gmail.com",
-    role: "dev"
-    },
-
-    {
-    name: "d",
-    email: "z@z.com",
-    role: "dev"
-    }
-  ])
   
   const [form, setForm] = useState({
     name: "",
@@ -75,16 +61,7 @@ export default function Form() {
         </label>
         <button type="submit">Submit!</button>
       </form>
-
-      {team.map(vals => (
-        <div key={Math.random() * 100000000}>
-        {vals.name}
-        {vals.email}
-        {vals.role}
-      </div>
-      )
-        
-      )}
+      
       
     </div>
   )
